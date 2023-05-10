@@ -1,0 +1,20 @@
+name: Release milvus images
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release_images:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'pip' 
+    - run: |
+        pip install -r requirements.txt
+        python scripts/save_image.py --manifest manifests/milvus_manifest.yaml
+        ls images/
+

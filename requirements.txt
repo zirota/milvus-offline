@@ -1,2 +1,4 @@
 docker==5.0.0
 nested-lookup==0.2.22
+requests<2.29.0 # https://github.com/docker/docker-py/issues/3113
+pyyaml

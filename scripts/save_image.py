@@ -34,7 +34,7 @@ if __name__ == "__main__":
     if not os.path.isdir(save_path):
         os.mkdir(save_path)
 
-    client = docker.from_env(version="20.10.23")
+    client = docker.from_env()
     for image_name in set(images):
         file_name = (image_name.split(':')[0].replace("/", "-"))
         f = gzip.open(save_path + "/" + file_name + '.tar.gz', 'wb')
