@@ -1,2 +1,6 @@
 venv/
 images/
+milvus/
+milvus-helm/
+
+*.tar.gz
